@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Hero } from '../components/Hero';
 import { WavyTransition } from '../components/WavyTransition';
-import { CategorySection } from '../components/CategorySection';
 import { CarCard } from '../components/CarCard';
 import { FLEET_STOCK as STATIC_FLEET_STOCK } from '../constants';
 import { fleetService } from '../services/fleetService';
@@ -40,7 +39,6 @@ export const HomePage: React.FC = () => {
     <main>
       <Hero />
       <WavyTransition />
-      <CategorySection />
 
       {/* Featured Cars Section */}
       <section className="py-12 bg-white">
