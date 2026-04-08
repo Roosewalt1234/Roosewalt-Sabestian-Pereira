@@ -58,15 +58,15 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-[#D4AF37] shrink-0" />
-                <span className="text-white/40 text-sm">Sheikh Zayed Road, Business Bay, Dubai, UAE</span>
+                <span className="text-white/40 text-sm">7-1 Street 2A, Al Qouz Ind.fourth - Al Quoz - Dubai</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-[#D4AF37] shrink-0" />
-                <span className="text-white/40 text-sm">+971 50 717 2790</span>
+                <span className="text-white/40 text-sm">+971 55 313 4587</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-[#D4AF37] shrink-0" />
-                <span className="text-white/40 text-sm">info@crescentmobility.ae</span>
+                <span className="text-white/40 text-sm">info@singleclick.ae</span>
               </li>
             </ul>
           </div>

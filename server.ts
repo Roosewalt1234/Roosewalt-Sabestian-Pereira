@@ -27,7 +27,7 @@ function normalizeChatId(id: string): string {
 
 async function startServer() {
   const app = express();
-  const port = process.env.PORT || 8080;
+  const port = process.env.PORT || 3000;
   const isProduction = process.env.NODE_ENV === "production";
 
   app.use(express.json());
@@ -1089,17 +1089,14 @@ app.post("/api/messages", async (req, res) => {
   });
 
   if (!isProduction) {
-    // Development: use Vite dev server with HMR as middleware
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
   } else {
-    // Production: serve pre-built static assets from dist/
     app.use(express.static(path.join(process.cwd(), 'dist')));
-    // SPA fallback — serve index.html for any non-API route so React Router works
-    app.get(/^(?!\/api).*$/, (req, res) => {
+    app.get('*', (req, res) => {
       res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
     });
   }

@@ -51,9 +51,9 @@ export const Navbar = () => {
                 </>
               )}
             </div>
-            <a href="tel:+971507172790" className="hidden sm:flex items-center gap-2 text-[#D4AF37] border border-[#D4AF37]/30 px-4 py-2 rounded-full hover:bg-[#D4AF37] hover:text-black transition-all">
+            <a href="tel:+971553134587" className="hidden sm:flex items-center gap-2 text-[#D4AF37] border border-[#D4AF37]/30 px-4 py-2 rounded-full hover:bg-[#D4AF37] hover:text-black transition-all">
               <Phone size={16} />
-              <span className="text-sm font-medium">+971 50 717 2790</span>
+              <span className="text-sm font-medium">+971 55 313 4587</span>
             </a>
             <button className="text-black p-2 md:hidden" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X /> : <Menu />}
@@ -85,9 +85,9 @@ export const Navbar = () => {
                 Sign In
               </Link>
             )}
-            <a href="tel:+971507172790" className="flex items-center gap-2 text-[#D4AF37]">
+            <a href="tel:+971553134587" className="flex items-center gap-2 text-[#D4AF37]">
               <Phone size={18} />
-              <span>+971 50 717 2790</span>
+              <span>+971 55 313 4587</span>
             </a>
           </div>
         </motion.div>
