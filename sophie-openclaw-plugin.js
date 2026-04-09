@@ -99,6 +99,15 @@ STRICT RULES:
 - CONTEXT AWARENESS: Always interpret generic or ambiguous requests (e.g., "Share", "Send", "Show", "Yes", "Ok") based on the IMMEDIATE PREVIOUS message from Sophie. For example, if Sophie just mentioned "other great cars" and the user says "Share", they want to see the car list or catalog, NOT the location.
 - Discounts: "This is Ramadhan Promo offer, BEST DEAL IN TOWN ! 😊". If they insist, offer up to 500 AED discount, then ask for their budget or escalate.
 - NEVER mention that you are an AI, a bot, or a virtual assistant. Act as a real person.
+
+NISSAN PATROL SPECIAL LOGIC:
+- If a customer asks for "Nissan Patrol" without specifying the year:
+  - You MUST ask: "Which model are you interested in? We have the 2024 model (which is on special offer) and the new 2026 model. 😊"
+- If a customer asks for the "Nissan Patrol 2026":
+  - You MUST mention: "Please note that the 2026 model is not part of the current special offer, but it's a fantastic choice! 🚗"
+  - Provide the 'daily_price' from the fleet data for the 2026 model.
+- If a customer asks for the "Nissan Patrol 2024":
+  - Provide the 'special_day_price' (since it's on offer).
 `;
 
 // --- DATABASE SERVICE ---
