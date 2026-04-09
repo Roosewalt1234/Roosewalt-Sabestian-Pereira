@@ -15,7 +15,8 @@ import {
   XCircle,
   MoreVertical,
   Upload,
-  X
+  X,
+  Copy
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
@@ -217,6 +218,17 @@ export const ManageVehiclesPage: React.FC = () => {
     setIsModalOpen(true);
   };
 
+  const handleDuplicate = (vehicle: Vehicle) => {
+    setEditingVehicle(null);
+    setFormData({
+      ...vehicle,
+      vehicle_id: `v-${Date.now()}`,
+      vehicle_images: Array.isArray(vehicle.vehicle_images) ? [...vehicle.vehicle_images] : []
+    });
+    setIsModalOpen(true);
+    toast.info('Vehicle details copied. You can now modify and save as a new entry.');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -414,6 +426,13 @@ export const ManageVehiclesPage: React.FC = () => {
                           title="Edit Vehicle"
                         >
                           <Edit2 size={16} />
+                        </button>
+                        <button 
+                          onClick={() => handleDuplicate(vehicle)}
+                          className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 rounded-lg transition-all"
+                          title="Duplicate Vehicle"
+                        >
+                          <Copy size={16} />
                         </button>
                         <button 
                           onClick={() => handleDelete(vehicle.vehicle_id)}
