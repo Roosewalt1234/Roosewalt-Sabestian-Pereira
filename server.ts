@@ -32,6 +32,15 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Root route for health check
+  app.get("/", (req, res) => {
+    res.send("Sophie AI Server is Online");
+  });
+
+  app.get("/health", (req, res) => {
+    res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
+  });
+
   console.log(`[STARTUP] WAHA_URL: ${process.env.WAHA_URL ? 'SET' : 'MISSING'}`);
   console.log(`[STARTUP] WAHA_SESSION: ${process.env.WAHA_SESSION || 'default'}`);
 
