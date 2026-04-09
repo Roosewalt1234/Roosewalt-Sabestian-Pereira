@@ -32,8 +32,7 @@ async function startServer() {
 
   app.use(express.json());
 
-  // Root route for health check
-  app.get("/", (req, res) => {
+  app.get("/api/ping", (req, res) => {
     res.send("Sophie AI Server is Online");
   });
 
