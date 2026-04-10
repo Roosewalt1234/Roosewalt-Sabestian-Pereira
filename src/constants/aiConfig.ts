@@ -25,7 +25,7 @@ Triggers: available cars, car list, catalog, which cars, what do you have
 
 LOCATION
 Q: Where are you located? / Office address? / Can I come to the office?
-A: We are located in 7-1 Street 2A, Al Qouz Ind.fourth - Al Quoz - Dubai. 📍 Here is our location on Google Maps: https://maps.app.goo.gl/cz2oUHDMFaG8fFx29. However, please note that our office is currently closed due to the situation. We are handling all bookings digitally and providing delivery!
+A: We are located in 7-1 Street 2A, Al Qouz Ind. fourth - Al Quoz - Dubai. 📍 Here is our location on Google Maps: https://maps.app.goo.gl/cz2oUHDMFaG8fFx29. However, please note that our office is currently closed due to the situation. We are handling all bookings digitally and providing delivery!
 Triggers: location, address, office, where are you, pickup location
 
 REQUIREMENTS (UAE RESIDENT)

@@ -109,8 +109,22 @@ async function startServer() {
     try {
       await query("UPDATE knowledge_base SET is_active = false WHERE question ILIKE '%bank%' OR question ILIKE '%account%' OR answer ILIKE '%bank%' OR answer ILIKE '%account%'");
       console.log("[CLEANUP] Deactivated bank-related knowledge base entries");
+      
+      // FIX: Update old address to new address in database
+      const oldAddressPart = "Warsan, Morocco I 12";
+      const newAddress = "7-1 Street 2A, Al Qouz Ind. fourth - Al Quoz - Dubai";
+      const newMap = "https://maps.app.goo.gl/cz2oUHDMFaG8fFx29";
+      
+      await query(
+        `UPDATE knowledge_base 
+         SET answer = REPLACE(answer, 'Warsan, Morocco I 12, Dubai', $1),
+             answer = REPLACE(answer, 'https://maps.app.goo.gl/idKUbcDBpZBivovP7', $2)
+         WHERE answer LIKE '%Warsan%'`,
+        [newAddress, newMap]
+      );
+      console.log("[FIX] Updated old address in knowledge base");
     } catch (err) {
-      console.error("[CLEANUP] Failed to deactivate bank-related entries:", err);
+      console.error("[CLEANUP] Failed to run cleanup/fix:", err);
     }
   }).catch(err => {
     console.error("Database init process failed", err);
